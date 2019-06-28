@@ -1,28 +1,25 @@
-<template>
+<template lang="html">
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav-bar></nav-bar>
+    <h2>Test</h2>
+    <router-view id="view"></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "@/components/NavBar"
 
 export default {
-  name: 'app',
+  name: "app",
+  mounted() {
+    // fetch("https://ghibliapi.herokuapp.com/species")
+    // .then(res => res.json()).then(data => console.log(data))
+  },
   components: {
-    HelloWorld
+    "nav-bar": NavBar
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="css" scoped>
 </style>
