@@ -1,7 +1,10 @@
 <template lang="html">
   <div class="">
-    <select v-if="films" v-model="selectedFilm" v-on:change="handleSelect">
+    <select v-if="films" v-model="selectedFilm" v-on:change="handleSelectFilm">
       <option v-for="film in films" :value="film">{{film.title}}</option>
+    </select>
+    <select v-if="people" v-model="selectedPerson" v-on:change="handleSelectPerson">
+      <option v-for="person in people" :value="person">{{person.name}}</option>
     </select>
   </div>
 </template>
@@ -13,14 +16,30 @@ export default {
   name: "select-box",
   data() {
     return {
-      selectedFilm: {}
+      selectedFilm: {},
+      selectedPerson: {},
+      selectedLocation: {},
+      selectedSpecies: {},
+      selectedVehicle: {}
     }
   },
-  props: ["films"],
+  props: ["films", "people", "locations", "species", "vehicles"],
   methods: {
-    handleSelect() {
+    handleSelectFilm() {
       eventBus.$emit("selected-film", this.selectedFilm);
-    }
+    },
+    handleSelectPerson() {
+      eventBus.$emit("selected-person", this.selectedPerson);
+    },
+    handleSelectPerson() {
+      eventBus.$emit("selected-location", this.selectedLocation);
+    },
+    handleSelectPerson() {
+      eventBus.$emit("selected-species", this.selectedSpecies);
+    },
+    handleSelectPerson() {
+      eventBus.$emit("selected-vehicle", this.selectedVehicle);
+    },
   }
 }
 </script>
