@@ -12,6 +12,9 @@
     <select v-if="species" v-model="selectedSpecies" v-on:change="handleSelectSpecies">
       <option v-for="species in species" :value="species">{{species.name}}</option>
     </select>
+    <select v-if="vehicles" v-model="selectedVehicle" v-on:change="handleSelectVehicle">
+      <option v-for="vehicle in vehicles" :value="vehicle">{{vehicle.name}}</option>
+    </select>
   </div>
 </template>
 
