@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import {eventBus} from "@/main.js"
-import SelectBox from "@/components/SelectBox"
-import PersonDetails from "@/components/PersonDetails"
+import {eventBus} from "@/main.js";
+import SelectBox from "@/components/SelectBox";
+import PersonDetails from "@/components/PersonDetails";
 
 export default {
   name: "people",

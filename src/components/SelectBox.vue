@@ -6,6 +6,9 @@
     <select v-if="people" v-model="selectedPerson" v-on:change="handleSelectPerson">
       <option v-for="person in people" :value="person">{{person.name}}</option>
     </select>
+    <select v-if="locations" v-model="selectedLocation" v-on:change="handleSelectLocation">
+      <option v-for="location in locations" :value="location">{{location.name}}</option>
+    </select>
   </div>
 </template>
 
@@ -31,13 +34,13 @@ export default {
     handleSelectPerson() {
       eventBus.$emit("selected-person", this.selectedPerson);
     },
-    handleSelectPerson() {
+    handleSelectLocation() {
       eventBus.$emit("selected-location", this.selectedLocation);
     },
-    handleSelectPerson() {
+    handleSelectSpecies() {
       eventBus.$emit("selected-species", this.selectedSpecies);
     },
-    handleSelectPerson() {
+    handleSelectVehicle() {
       eventBus.$emit("selected-vehicle", this.selectedVehicle);
     },
   }

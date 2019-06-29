@@ -12,8 +12,7 @@ import NavBar from "@/components/NavBar";
 export default {
   name: "app",
   mounted() {
-    // fetch("https://ghibliapi.herokuapp.com/species")
-    // .then(res => res.json()).then(data => console.log(data))
+
   },
   components: {
     "nav-bar": NavBar
