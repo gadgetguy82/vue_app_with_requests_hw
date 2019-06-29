@@ -9,6 +9,9 @@
     <select v-if="locations" v-model="selectedLocation" v-on:change="handleSelectLocation">
       <option v-for="location in locations" :value="location">{{location.name}}</option>
     </select>
+    <select v-if="species" v-model="selectedSpecies" v-on:change="handleSelectSpecies">
+      <option v-for="species in species" :value="species">{{species.name}}</option>
+    </select>
   </div>
 </template>
 

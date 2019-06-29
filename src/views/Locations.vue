@@ -14,7 +14,7 @@ export default {
   name: "locations",
   data() {
     return {
-      locations: [],
+      locations: null,
       selectedLocation: null
     }
   },

@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="people">
-    <select-box :people="people"></select-box>
+    <select-box v-if="people" :people="people"></select-box>
     <person-details v-if="selectedPerson" :selectedPerson="selectedPerson"></person-details>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   name: "people",
   data() {
     return {
-      people: [],
+      people: null,
       selectedPerson: null
     }
   },

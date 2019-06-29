@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="films">
-    <select-box :films="films"></select-box>
+    <select-box v-if="films" :films="films"></select-box>
     <film-details v-if="selectedFilm" :selectedFilm="selectedFilm"></film-details>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   name: "films",
   data() {
     return {
-      films: [],
+      films: null,
       selectedFilm: null,
     }
   },
