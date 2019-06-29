@@ -6,8 +6,7 @@
       <li>Terrain: {{selectedLocation.terrain}}</li>
       <li>Surface Water: {{selectedLocation.surface_water}}</li>
       <li>Residents: {{selectedLocation.residents}}</li>
-      <li>Films: {{selectedLocation.films}}</li>
-      <li>URL: {{selectedLocation.url}}</li>
+      <li>Films: {{selectedFilms}}</li>
     </ul>
   </div>
 </template>
@@ -15,9 +14,21 @@
 <script>
 export default {
   name: "location-details",
-  props: ["selectedLocation"]
+  props: ["selectedLocation"],
+  computed: {
+    selectedFilms: function() {
+      if (this.selectedLocation) {
+        return this.selectedLocation.films.map(
+          filmURL => fetch(filmURL).then(res => res.json()).then(data => data));
+      }
+    }
+  }
 }
 </script>
 
 <style lang="css" scoped>
+ul {
+  font-family: 'Shojumaru', cursive;
+  font-size: 20px;
+}
 </style>

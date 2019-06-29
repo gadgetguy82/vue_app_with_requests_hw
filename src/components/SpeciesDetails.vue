@@ -7,7 +7,6 @@
       <li>Hair Colours: {{selectedSpecies.hair_colors}}</li>
       <li>People: {{selectedSpecies.people}}</li>
       <li>Films: {{selectedSpecies.films}}</li>
-      <li>URL: {{selectedSpecies.url}}</li>
     </ul>
   </div>
 </template>
@@ -20,4 +19,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul {
+  font-family: 'Shojumaru', cursive;
+  font-size: 20px;
+}
 </style>

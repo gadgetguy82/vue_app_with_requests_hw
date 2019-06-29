@@ -1,6 +1,10 @@
 <template lang="html">
   <div class="sidebar">
-    <h2>Studio Ghibli Anime Feature Films</h2>
+    <div class="title">
+      <h2>Studio Ghibli Anime Feature Films</h2>
+      <h3>ジオジブリ</h3>
+      <h3>株式会社スタ</h3>
+    </div>
     <nav>
       <router-link :to="{ name: 'films' }">Films</router-link>
       <router-link :to="{ name: 'people' }">People</router-link>
@@ -25,13 +29,26 @@ export default {
   height: 600px;
 }
 
+.title {
+  display: flex;
+  flex-direction: row;
+}
+
 h2 {
   width: 150px;
   background-color: #59518A;
-  padding: 10px 10px;
+  /* padding: 10px 10px; */
   margin: 0;
   color: #FFFFFF;
   font-family: 'Abel', sans-serif;
+}
+
+h3 {
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+  width: 20px;
+  margin: 0;
 }
 
 nav {

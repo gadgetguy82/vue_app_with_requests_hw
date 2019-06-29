@@ -20,4 +20,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul {
+  font-family: 'Shojumaru', cursive;
+  font-size: 20px;
+}
 </style>

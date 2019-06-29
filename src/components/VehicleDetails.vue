@@ -7,7 +7,6 @@
       <li>Length: {{selectedVehicle.length}}</li>
       <li>Pilot: {{selectedVehicle.pilot}}</li>
       <li>Films: {{selectedVehicle.films}}</li>
-      <li>URL: {{selectedVehicle.url}}</li>
     </ul>
   </div>
 </template>
@@ -20,4 +19,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul {
+  font-family: 'Shojumaru', cursive;
+  font-size: 20px;
+}
 </style>
