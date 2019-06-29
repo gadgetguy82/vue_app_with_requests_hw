@@ -7,6 +7,7 @@
       <li>Surface Water: {{selectedLocation.surface_water}}</li>
       <li>Residents: {{selectedLocation.residents}}</li>
       <li>Films: {{selectedLocation.films}}</li>
+      <li>URL: {{selectedLocation.url}}</li>
     </ul>
   </div>
 </template>

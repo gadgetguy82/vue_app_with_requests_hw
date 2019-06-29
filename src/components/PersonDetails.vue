@@ -7,6 +7,8 @@
       <li>Eye Colour: {{selectedPerson.eye_color}}</li>
       <li>Hair Colour: {{selectedPerson.hair_color}}</li>
       <li>Films: {{selectedPerson.films}}</li>
+      <li>Species: {{selectedPerson.species}}</li>
+      <li>URL: {{selectedPerson.url}}</li>
     </ul>
   </div>
 </template>
