@@ -6,7 +6,7 @@
       <li>Description: {{selectedVehicle.description}}</li>
       <li>Length: {{selectedVehicle.length}}</li>
       <li>Pilot: <router-link :to="{ name: 'people', params: {'selectPerson': pilotObject} }">{{pilotObject.name}}</router-link></li>
-      <li>Film: <router-link :to="{ name: 'films', params: {'selectedFilm': filmObject} }">{{filmObject.title}}</router-link></li>
+      <li>Film: <router-link :to="{ name: 'films', params: {'selectFilm': filmObject} }">{{filmObject.title}}</router-link></li>
     </ul>
   </div>
 </template>

@@ -1,8 +1,9 @@
 <template lang="html">
   <div id="films">
     <div class="main">
-      <select-box v-if="films" :films="films"></select-box>
-      <film-details v-if="selectedFilm" :selectedFilm="selectedFilm"></film-details>
+      <select-box v-if="films" :films="films" :selectFilm="selectedFilm"></select-box>
+      <film-details v-if="selectedFilm && !setFilm" :selectedFilm="selectedFilm"></film-details>
+      <film-details v-if="setFilm" :selectedFilm="selectedFilm"></film-details>
     </div>
     <div class="sidebar_right">
       <stats-box v-if="chartSettings" :chartSettings="chartSettings"></stats-box>
@@ -18,10 +19,23 @@ import StatsBox from "@/components/StatsBox";
 
 export default {
   name: "films",
-  props: ["selectedFilm"],
+  props: ["selectFilm"],
+  computed: {
+    setFilm: function() {
+      if (this.selectFilm && this.set) {
+        this.selectedFilm = this.selectFilm;
+        this.set = false;
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
   data() {
     return {
       films: null,
+      selectedFilm: null,
+      set: true,
       chartSettings: {
         type: null,
         data: null,

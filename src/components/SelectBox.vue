@@ -2,7 +2,7 @@
   <div class="select_box">
     <select v-if="films" v-model="selectedFilm" v-on:change="handleSelectFilm">
       <option value="Select a film..." disabled>Select a film...</option>
-      <option v-for="film in films" :value="film">{{film.title}}</option>
+      <option v-for="film in films" :value="film" :selected="selectFilm === film">{{film.title}}</option>
     </select>
     <select v-if="people" v-model="selectedPerson" v-on:change="handleSelectPerson">
       <option v-for="person in people" :value="person">{{person.name}}</option>
@@ -33,7 +33,7 @@ export default {
       selectedVehicle: {}
     }
   },
-  props: ["films", "people", "locations", "species", "vehicles"],
+  props: ["films", "people", "locations", "species", "vehicles", "selectFilm"],
   methods: {
     handleSelectFilm() {
       eventBus.$emit("selected-film", this.selectedFilm);

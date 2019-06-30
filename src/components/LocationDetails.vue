@@ -6,7 +6,7 @@
       <li>Terrain: {{selectedLocation.terrain}}</li>
       <li>Surface Water: {{selectedLocation.surface_water}}</li>
       <li>Residents: <span v-for="resident in peopleObjects"><router-link :to="{name: 'people', params: {'selectPerson': resident}}">{{resident.name}}, </router-link></span></li>
-      <li>Films: <span v-for="film in filmObjects"><router-link :to="{name: 'films', params: {'selectedFilm': film}}">{{film.title}}, </router-link></span></li>
+      <li>Films: <span v-for="film in filmObjects"><router-link :to="{name: 'films', params: {'selectFilm': film}}">{{film.title}}, </router-link></span></li>
     </ul>
   </div>
 </template>

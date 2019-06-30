@@ -6,7 +6,7 @@
       <li>Eye Colours: {{selectedSpecies.eye_colors}}</li>
       <li>Hair Colours: {{selectedSpecies.hair_colors}}</li>
       <li>People: <span v-for="person in peopleObjects"><router-link :to="{name: 'people', params: {'selectPerson': person}}">{{person.name}}, </router-link></span></li>
-      <li>Films: <span v-for="film in filmObjects"><router-link :to="{name: 'films', params: {'selectedFilm': film}}">{{film.title}}, </router-link></span></li>
+      <li>Films: <span v-for="film in filmObjects"><router-link :to="{name: 'films', params: {'selectFilm': film}}">{{film.title}}, </router-link></span></li>
     </ul>
   </div>
 </template>
