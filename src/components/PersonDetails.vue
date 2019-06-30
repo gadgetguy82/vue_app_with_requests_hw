@@ -6,8 +6,8 @@
       <li>Age: {{selectedPerson.age}}</li>
       <li>Eye Colour: {{selectedPerson.eye_color}}</li>
       <li>Hair Colour: {{selectedPerson.hair_color}}</li>
-      <li>Films: {{selectedPerson.films}}</li>
-      <li>Species: {{selectedPerson.species}}</li>
+      <li>Species: <router-link :to="{ name: 'species', params: {'selectSpecies': speciesObject} }">{{speciesObject.name}}</router-link></li>
+      <li>Films: <span v-for="film in filmObjects"><router-link :to="{name: 'films', params: {'selectedFilm': film}}">{{film.title}}, </router-link></span></li>
     </ul>
   </div>
 </template>
@@ -15,7 +15,7 @@
 <script>
 export default {
   name: "person-details",
-  props: ["selectedPerson"]
+  props: ["selectedPerson", "filmObjects", "speciesObject"]
 }
 </script>
 

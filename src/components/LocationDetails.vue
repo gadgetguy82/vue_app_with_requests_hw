@@ -5,8 +5,8 @@
       <li>Climate: {{selectedLocation.climate}}</li>
       <li>Terrain: {{selectedLocation.terrain}}</li>
       <li>Surface Water: {{selectedLocation.surface_water}}</li>
-      <li>Residents: {{selectedLocation.residents}}</li>
-      <li>Films: {{selectedFilms}}</li>
+      <li>Residents: <span v-for="resident in peopleObjects"><router-link :to="{name: 'people', params: {'selectPerson': resident}}">{{resident.name}}, </router-link></span></li>
+      <li>Films: <span v-for="film in filmObjects"><router-link :to="{name: 'films', params: {'selectedFilm': film}}">{{film.title}}, </router-link></span></li>
     </ul>
   </div>
 </template>
@@ -14,15 +14,7 @@
 <script>
 export default {
   name: "location-details",
-  props: ["selectedLocation"],
-  computed: {
-    selectedFilms: function() {
-      if (this.selectedLocation) {
-        return this.selectedLocation.films.map(
-          filmURL => fetch(filmURL).then(res => res.json()).then(data => data));
-      }
-    }
-  }
+  props: ["selectedLocation", "filmObjects", "peopleObjects"]
 }
 </script>
 

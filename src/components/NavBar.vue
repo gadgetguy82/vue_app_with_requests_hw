@@ -37,7 +37,6 @@ export default {
 h2 {
   width: 150px;
   background-color: #59518A;
-  /* padding: 10px 10px; */
   margin: 0;
   color: #FFFFFF;
   font-family: 'Abel', sans-serif;

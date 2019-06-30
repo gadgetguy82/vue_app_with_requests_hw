@@ -13,12 +13,14 @@ const router = new Router({
     {
       path: "/films",
       name: "films",
-      component: Films
+      component: Films,
+      props: true
     },
     {
       path: "/people",
       name: "people",
-      component: People
+      component: People,
+      props: true
     },
     {
       path: "/locations",
@@ -28,7 +30,8 @@ const router = new Router({
     {
       path: "/species",
       name: "species",
-      component: Species
+      component: Species,
+      props: true
     },
     {
       path: "/vehicles",

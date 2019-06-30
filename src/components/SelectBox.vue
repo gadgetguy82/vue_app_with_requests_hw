@@ -1,6 +1,7 @@
 <template lang="html">
-  <div class="">
+  <div class="select_box">
     <select v-if="films" v-model="selectedFilm" v-on:change="handleSelectFilm">
+      <option value="Select a film..." disabled>Select a film...</option>
       <option v-for="film in films" :value="film">{{film.title}}</option>
     </select>
     <select v-if="people" v-model="selectedPerson" v-on:change="handleSelectPerson">
@@ -54,4 +55,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.select_box {
+  text-align: center;
+}
+
+select {
+  font-size: 16px;
+}
 </style>

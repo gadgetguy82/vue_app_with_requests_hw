@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="">
+  <div class="main">
     <select-box v-if="locations" :locations="locations"></select-box>
-    <location-details v-if="selectedLocation" :selectedLocation="selectedLocation"></location-details>
+    <location-details v-if="selectedLocation && filmObjects && peopleObjects" :selectedLocation="selectedLocation" :filmObjects="filmObjects" :peopleObjects="peopleObjects"></location-details>
   </div>
 </template>
 
@@ -15,14 +15,24 @@ export default {
   data() {
     return {
       locations: null,
-      selectedLocation: null
+      selectedLocation: null,
+      filmObjects: null,
+      peopleObjects: null
     }
   },
   mounted() {
     fetch("https://ghibliapi.herokuapp.com/locations")
     .then(res => res.json()).then(data => this.locations = data);
 
-    eventBus.$on("selected-location", location => this.selectedLocation = location);
+    eventBus.$on("selected-location", location => {
+      this.selectedLocation = location;
+      this.filmObjects = [];
+      this.peopleObjects = [];
+      this.selectedLocation.films.map(filmURL => fetch(filmURL).then(res => res.json()).then(data => this.filmObjects.push(data)));
+      if (this.selectedLocation.residents.length > 1) {
+        this.selectedLocation.residents.map(residentURL => fetch(residentURL).then(res => res.json()).then(data => this.peopleObjects.push(data)));
+      }
+    });
   },
   components: {
     "select-box": SelectBox,

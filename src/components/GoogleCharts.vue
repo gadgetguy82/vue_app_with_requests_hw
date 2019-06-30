@@ -1,22 +1,24 @@
 <template lang="html">
-  <div class="">
-    <!-- <GCharts :type="chartSettings.type" :data="chartSettings.data" :options="chartSettings.options"/> -->
+  <div class="chart">
+    <GChart type="ColumnChart" :data="chartData" :options="chartOptions"/>
   </div>
 </template>
 
 <script>
-import GChart from "vue-google-charts";
+import {GChart} from "vue-google-charts";
 
 export default {
   name: "google-charts",
+  props: ["chartSettings"],
   data() {
     return {
-      type: null,
-      data: null,
-      options: null
+      chartType: "ColumnChart"
     }
   },
-  props: ["chartSettings"],
+  computed: {
+    chartData: function() {return this.chartSettings.data},
+    chartOptions: function() {return this.chartSettings.options}
+  },
   components: {
     GChart
   }

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="film_list">
     <ul>
       <li>Title: {{selectedFilm.title}}</li>
       <li>Director: {{selectedFilm.director}}</li>
@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+
 ul {
   font-family: 'Shojumaru', cursive;
   font-size: 20px;
