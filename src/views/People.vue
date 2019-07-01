@@ -1,8 +1,14 @@
 <template lang="html">
   <div id="people">
-    <select-box v-if="people" :people="people"></select-box>
-    <person-details v-if="selectedPerson && !setPerson && speciesObject && filmObjects" :selectedPerson="selectedPerson" :filmObjects="filmObjects" :speciesObject="speciesObject"></person-details>
-    <person-details v-if="setPerson && speciesObject && filmObjects" :selectedPerson="selectedPerson" :filmObjects="filmObjects" :speciesObject="speciesObject"></person-details>
+    <div class="main">
+      <h2>Characters</h2>
+      <select-box v-if="people" :people="people"></select-box>
+      <person-details v-if="selectedPerson && !setPerson && speciesObject && filmObjects" :selectedPerson="selectedPerson" :filmObjects="filmObjects" :speciesObject="speciesObject"></person-details>
+      <person-details v-if="setPerson && speciesObject && filmObjects" :selectedPerson="selectedPerson" :filmObjects="filmObjects" :speciesObject="speciesObject"></person-details>
+    </div>
+    <div class="sidebar_right">
+
+    </div>
   </div>
 </template>
 
@@ -61,4 +67,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.main {
+  width: 580px;
+}
+
+.sidebar_right{
+  width: 500px;
+}
 </style>

@@ -1,7 +1,13 @@
 <template lang="html">
   <div id="vehicles">
-    <select-box v-if="vehicles" :vehicles="vehicles"></select-box>
-    <vehicle-details v-if="selectedVehicle && pilotObject && filmObject" :selectedVehicle="selectedVehicle" :pilotObject="pilotObject" :filmObject="filmObject"></vehicle-details>
+    <div class="main">
+      <h2>Vehicles</h2>
+      <select-box v-if="vehicles" :vehicles="vehicles"></select-box>
+      <vehicle-details v-if="selectedVehicle && pilotObject && filmObject" :selectedVehicle="selectedVehicle" :pilotObject="pilotObject" :filmObject="filmObject"></vehicle-details>
+    </div>
+    <div class="sidebar_right">
+
+    </div>
   </div>
 </template>
 
@@ -38,4 +44,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.main {
+  width: 580px;
+}
+
+.sidebar_right{
+  width: 500px;
+}
 </style>

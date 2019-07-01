@@ -1,6 +1,7 @@
 <template lang="html">
   <div id="films">
     <div class="main">
+      <h2>Films</h2>
       <select-box v-if="films" :films="films" :selectFilm="selectedFilm"></select-box>
       <film-details v-if="selectedFilm && !setFilm" :selectedFilm="selectedFilm"></film-details>
       <film-details v-if="setFilm" :selectedFilm="selectedFilm"></film-details>

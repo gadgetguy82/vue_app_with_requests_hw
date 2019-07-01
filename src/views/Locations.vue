@@ -1,7 +1,13 @@
 <template lang="html">
-  <div class="main">
-    <select-box v-if="locations" :locations="locations"></select-box>
-    <location-details v-if="selectedLocation && filmObjects && peopleObjects" :selectedLocation="selectedLocation" :filmObjects="filmObjects" :peopleObjects="peopleObjects"></location-details>
+  <div id="locations">
+    <div class="main">
+      <h2>Locations</h2>
+      <select-box v-if="locations" :locations="locations"></select-box>
+      <location-details v-if="selectedLocation && filmObjects && peopleObjects" :selectedLocation="selectedLocation" :filmObjects="filmObjects" :peopleObjects="peopleObjects"></location-details>
+    </div>
+    <div class="sidebar_right">
+
+    </div>
   </div>
 </template>
 
@@ -42,4 +48,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.main {
+  width: 580px;
+}
+
+.sidebar_right{
+  width: 500px;
+}
 </style>
